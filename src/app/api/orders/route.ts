@@ -1,6 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
+import { buildBusinessOrderMessage } from "@/lib/whatsapp";
+import { sendWhatsAppNotification } from "@/lib/whatsapp-api";
 
 const orderSchema = z.object({
   customerName: z.string().trim().min(2, "Ingresa tu nombre"),
@@ -85,6 +87,8 @@ export async function POST(request: NextRequest) {
     },
     include: { items: true },
   });
+
+  after(() => sendWhatsAppNotification(buildBusinessOrderMessage(order)));
 
   return NextResponse.json(order, { status: 201 });
 }
