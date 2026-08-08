@@ -18,6 +18,17 @@ model Admin {
   createdAt    DateTime @default(now())
 }
 
+// Intentos de login fallidos, usados para el rate-limiting de /api/auth/login.
+// Se guardan en la base (no en memoria) porque las funciones serverless de
+// Vercel no comparten estado entre invocaciones de forma confiable.
+model LoginAttempt {
+  id         String   @id @default(cuid())
+  identifier String // "ip:<ip>" o "email:<email>"
+  createdAt  DateTime @default(now())
+
+  @@index([identifier, createdAt])
+}
+
 model Category {
   id        String   @id @default(cuid())
   name      String   @unique

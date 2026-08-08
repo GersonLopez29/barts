@@ -9,6 +9,7 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/Admin'
+export type * from './models/LoginAttempt'
 export type * from './models/Category'
 export type * from './models/MenuItem'
 export type * from './models/Order'
