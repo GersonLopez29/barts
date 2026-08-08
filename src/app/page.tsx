@@ -2,6 +2,10 @@ import { prisma } from "@/lib/db";
 import { getCategories } from "@/lib/categories";
 import MenuItemCard from "@/components/MenuItemCard";
 
+// Sin esto, Next.js prerenderiza esta página en build time y los cambios de
+// precio/disponibilidad del panel admin no se ven hasta el próximo deploy.
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const [categories, menuItems] = await Promise.all([
     getCategories(),
