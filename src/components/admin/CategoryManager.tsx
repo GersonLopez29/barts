@@ -104,7 +104,7 @@ export default function CategoryManager({ categories }: { categories: CategoryRo
             value={newIcon}
             onChange={(e) => setNewIcon(e.target.value)}
             maxLength={8}
-            className="mt-1 w-16 rounded-md border border-zinc-300 px-2 py-2 text-center text-sm focus:border-red-500 focus:outline-none"
+            className="mt-1 w-16 rounded-md border border-zinc-300 px-2 py-2 text-center text-sm focus:border-brand-orange focus:outline-none"
           />
         </div>
         <div className="flex-1">
@@ -115,14 +115,14 @@ export default function CategoryManager({ categories }: { categories: CategoryRo
             onChange={(e) => setNewName(e.target.value)}
             placeholder="Ej: Postres"
             maxLength={40}
-            className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-red-500 focus:outline-none"
+            className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-brand-orange focus:outline-none"
           />
         </div>
         <button
           type="button"
           onClick={handleCreate}
           disabled={creating}
-          className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60"
+          className="rounded-full bg-brand-orange px-4 py-2 text-sm font-semibold text-white hover:bg-brand-orange-hover disabled:opacity-60"
         >
           {creating ? "Creando..." : "Crear"}
         </button>
@@ -141,20 +141,20 @@ export default function CategoryManager({ categories }: { categories: CategoryRo
                     value={editIcon}
                     onChange={(e) => setEditIcon(e.target.value)}
                     maxLength={8}
-                    className="w-16 rounded-md border border-zinc-300 px-2 py-1.5 text-center text-sm focus:border-red-500 focus:outline-none"
+                    className="w-16 rounded-md border border-zinc-300 px-2 py-1.5 text-center text-sm focus:border-brand-orange focus:outline-none"
                   />
                   <input
                     type="text"
                     value={editName}
                     onChange={(e) => setEditName(e.target.value)}
                     maxLength={40}
-                    className="flex-1 rounded-md border border-zinc-300 px-3 py-1.5 text-sm focus:border-red-500 focus:outline-none"
+                    className="flex-1 rounded-md border border-zinc-300 px-3 py-1.5 text-sm focus:border-brand-orange focus:outline-none"
                   />
                   <button
                     type="button"
                     onClick={() => handleSaveEdit(cat.id)}
                     disabled={rowLoading === cat.id}
-                    className="rounded-full bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-700 disabled:opacity-60"
+                    className="rounded-full bg-brand-orange px-3 py-1.5 text-xs font-semibold text-white hover:bg-brand-orange-hover disabled:opacity-60"
                   >
                     {rowLoading === cat.id ? "Guardando..." : "Guardar"}
                   </button>

@@ -19,31 +19,31 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-600 via-red-600 to-amber-500">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-brown via-brand-brown to-brand-orange">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-amber-300/30 blur-3xl"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-orange/40 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-red-800/30 blur-3xl"
+          className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 rounded-full bg-black/20 blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:text-left">
-          <p className="inline-block rounded-full bg-white/15 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-amber-100 ring-1 ring-white/20">
+          <p className="inline-block rounded-full bg-white/15 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-brand-cream ring-1 ring-white/20">
             🔥 Hecho al momento
           </p>
           <h1 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             Hamburguesas, alitas BBQ{" "}
-            <span className="text-amber-300">y salchipapas</span>
+            <span className="text-brand-orange-soft">y salchipapas</span>
           </h1>
-          <p className="mt-4 max-w-xl text-sm text-red-50 sm:text-base">
+          <p className="mt-4 max-w-xl text-sm text-brand-cream sm:text-base">
             Arma tu pedido y elige delivery o recojo en tienda. Pagas en efectivo,
             Yape o Plin al recibirlo.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#menu"
-              className="inline-block rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-red-900 shadow-md transition hover:-translate-y-0.5 hover:bg-amber-300 hover:shadow-lg"
+              className="inline-block rounded-full bg-brand-cream px-6 py-3 text-sm font-bold text-brand-brown shadow-md transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg"
             >
               Ver el menú
             </a>

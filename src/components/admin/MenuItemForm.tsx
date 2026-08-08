@@ -93,7 +93,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
           />
         </div>
         <div>
@@ -101,7 +101,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
           >
             {props.categories.map((cat) => (
               <option key={cat.name} value={cat.name}>
@@ -119,7 +119,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
           rows={2}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+          className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
         />
       </div>
 
@@ -137,7 +137,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
               step="0.01"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="w-full rounded-xl border border-zinc-300 py-2 pl-9 pr-3 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+              className="w-full rounded-xl border border-zinc-300 py-2 pl-9 pr-3 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
             />
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
             type="file"
             accept="image/png, image/jpeg, image/webp, image/gif"
             onChange={handleFileSelected}
-            className="mt-1 block w-full text-sm text-zinc-600 file:mr-3 file:rounded-full file:border-0 file:bg-red-50 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-red-700 hover:file:bg-red-100"
+            className="mt-1 block w-full text-sm text-zinc-600 file:mr-3 file:rounded-full file:border-0 file:bg-brand-orange-light file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-brand-brown hover:file:bg-brand-orange-soft"
           />
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function MenuItemForm(props: MenuItemFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="rounded-full bg-red-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-md disabled:pointer-events-none disabled:opacity-60"
+        className="rounded-full bg-brand-orange px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-md disabled:pointer-events-none disabled:opacity-60"
       >
         {loading ? "Guardando..." : isEdit ? "Guardar cambios" : "Agregar al menú"}
       </button>

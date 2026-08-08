@@ -72,8 +72,8 @@ export default function OrderQueue({ initialOrders }: { initialOrders: OrderData
             onClick={() => setFilter(f)}
             className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition ${
               filter === f
-                ? "bg-red-600 text-white"
-                : "border border-zinc-300 text-zinc-600 hover:border-red-300"
+                ? "bg-brand-orange text-white"
+                : "border border-zinc-300 text-zinc-600 hover:border-brand-orange/50"
             }`}
           >
             {f === "todos" ? "Todos" : `${getOrderStatusIcon(f)} ${getOrderStatusLabel(f)}`}
@@ -124,7 +124,7 @@ export default function OrderQueue({ initialOrders }: { initialOrders: OrderData
                 </div>
 
                 <div className="mt-3 flex items-center justify-between gap-3 border-t border-zinc-100 pt-3">
-                  <span className="text-base font-extrabold text-red-600">
+                  <span className="text-base font-extrabold text-brand-orange">
                     {formatPrice(order.total)}
                   </span>
                   {!isFinal && (
@@ -134,7 +134,7 @@ export default function OrderQueue({ initialOrders }: { initialOrders: OrderData
                           type="button"
                           disabled={updatingId === order.id}
                           onClick={() => updateStatus(order.id, nextStatus)}
-                          className="rounded-full bg-red-600 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-red-700 disabled:opacity-60"
+                          className="rounded-full bg-brand-orange px-3 py-1.5 text-xs font-bold text-white transition hover:bg-brand-orange-hover disabled:opacity-60"
                         >
                           {updatingId === order.id
                             ? "Guardando..."

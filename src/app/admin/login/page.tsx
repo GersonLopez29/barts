@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
     <div className="relative isolate overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-red-50 via-white to-amber-50"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-brand-orange-light via-white to-brand-cream"
       />
       <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-md flex-col items-center justify-center px-4 py-12">
         <div className="flex items-center gap-2 text-2xl font-extrabold">
@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
             🍔
           </span>
           <span>
-            Bart&apos;s<span className="text-red-600">.</span>
+            Bart&apos;s<span className="text-brand-orange">.</span>
           </span>
         </div>
 
@@ -61,7 +61,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+                className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
               />
             </div>
 
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+                className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
               />
             </div>
 
@@ -81,7 +81,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-full bg-red-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-red-600/20 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-lg disabled:pointer-events-none disabled:opacity-60"
+              className="w-full rounded-full bg-brand-orange px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/20 transition hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-lg disabled:pointer-events-none disabled:opacity-60"
             >
               {loading ? "Ingresando..." : "Ingresar"}
             </button>

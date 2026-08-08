@@ -94,14 +94,14 @@ export default function OrderTracker({
               <div key={status} className="flex flex-1 flex-col items-center gap-1.5">
                 <span
                   className={`flex h-9 w-9 items-center justify-center rounded-full text-sm transition ${
-                    i <= stepIndex ? "bg-red-600 text-white" : "bg-zinc-100 text-zinc-400"
+                    i <= stepIndex ? "bg-brand-orange text-white" : "bg-zinc-100 text-zinc-400"
                   }`}
                 >
                   {getOrderStatusIcon(status)}
                 </span>
                 <span
                   className={`text-center text-[11px] font-medium ${
-                    i <= stepIndex ? "text-red-700" : "text-zinc-400"
+                    i <= stepIndex ? "text-brand-orange" : "text-zinc-400"
                   }`}
                 >
                   {getOrderStatusLabel(status)}
@@ -128,7 +128,7 @@ export default function OrderTracker({
         </div>
         <div className="mt-2 flex items-center justify-between border-t border-zinc-100 pt-3">
           <span className="text-sm font-medium text-zinc-600">Total</span>
-          <span className="text-lg font-extrabold text-red-600">
+          <span className="text-lg font-extrabold text-brand-orange">
             {formatPrice(order.total)}
           </span>
         </div>

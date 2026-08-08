@@ -69,7 +69,7 @@ export default function CarritoPage() {
         </p>
         <Link
           href="/"
-          className="mt-6 inline-block rounded-full bg-red-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-red-600/20 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-lg"
+          className="mt-6 inline-block rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white shadow-md shadow-brand-orange/20 transition hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-lg"
         >
           Ver el menú
         </Link>
@@ -113,7 +113,7 @@ export default function CarritoPage() {
             <button
               type="button"
               onClick={() => removeItem(item.menuItemId)}
-              className="shrink-0 rounded-full p-1.5 text-zinc-400 transition hover:bg-red-50 hover:text-red-600"
+              className="shrink-0 rounded-full p-1.5 text-zinc-400 transition hover:bg-brand-orange-light hover:text-brand-orange"
               aria-label={`Quitar ${item.name}`}
             >
               ✕
@@ -122,7 +122,7 @@ export default function CarritoPage() {
         ))}
         <div className="flex items-center justify-between p-4">
           <span className="text-sm font-medium text-zinc-600">Total</span>
-          <span className="text-xl font-extrabold text-red-600">{formatPrice(totalPrice)}</span>
+          <span className="text-xl font-extrabold text-brand-orange">{formatPrice(totalPrice)}</span>
         </div>
       </div>
 
@@ -139,7 +139,7 @@ export default function CarritoPage() {
             required
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
           />
         </div>
 
@@ -153,7 +153,7 @@ export default function CarritoPage() {
             placeholder="Ej: 987654321"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
           />
         </div>
 
@@ -165,8 +165,8 @@ export default function CarritoPage() {
               onClick={() => setDeliveryType("delivery")}
               className={`flex-1 rounded-xl border px-3 py-2.5 text-sm font-medium transition ${
                 deliveryType === "delivery"
-                  ? "border-red-500 bg-red-50 text-red-700"
-                  : "border-zinc-300 text-zinc-600 hover:border-red-300"
+                  ? "border-brand-orange bg-brand-orange-light text-brand-brown"
+                  : "border-zinc-300 text-zinc-600 hover:border-brand-orange/50"
               }`}
             >
               🛵 Delivery
@@ -176,8 +176,8 @@ export default function CarritoPage() {
               onClick={() => setDeliveryType("pickup")}
               className={`flex-1 rounded-xl border px-3 py-2.5 text-sm font-medium transition ${
                 deliveryType === "pickup"
-                  ? "border-red-500 bg-red-50 text-red-700"
-                  : "border-zinc-300 text-zinc-600 hover:border-red-300"
+                  ? "border-brand-orange bg-brand-orange-light text-brand-brown"
+                  : "border-zinc-300 text-zinc-600 hover:border-brand-orange/50"
               }`}
             >
               🏠 Recojo en tienda
@@ -196,7 +196,7 @@ export default function CarritoPage() {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Calle, número, referencia"
-              className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+              className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
             />
           </div>
         )}
@@ -210,11 +210,11 @@ export default function CarritoPage() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Ej: sin cebolla, tocar timbre, etc."
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-100"
+            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 text-sm focus:border-brand-orange focus:outline-none focus:ring-4 focus:ring-brand-orange-soft"
           />
         </div>
 
-        <p className="rounded-xl bg-amber-50 px-4 py-3 text-xs text-amber-800">
+        <p className="rounded-xl bg-brand-cream px-4 py-3 text-xs text-brand-brown">
           💵 El pago es contra entrega/recojo (efectivo, Yape o Plin). No se cobra nada
           en este sitio.
         </p>
@@ -224,7 +224,7 @@ export default function CarritoPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-md shadow-red-600/20 transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-lg disabled:pointer-events-none disabled:opacity-60"
+          className="w-full rounded-full bg-brand-orange px-4 py-3 text-sm font-bold text-white shadow-md shadow-brand-orange/20 transition hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-lg disabled:pointer-events-none disabled:opacity-60"
         >
           {loading ? "Enviando..." : `Confirmar pedido — ${formatPrice(totalPrice)}`}
         </button>

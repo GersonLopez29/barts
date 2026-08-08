@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Paleta de marca Bart's, tomada del logo: naranja + marrón café + crema. */
+  --color-brand-orange: #f2901e;
+  --color-brand-orange-hover: #dd7d0f;
+  --color-brand-orange-soft: #fbe4c0;
+  --color-brand-orange-light: #fdf1e0;
+  --color-brand-brown: #3e2417;
+  --color-brand-brown-soft: #6b4226;
+  --color-brand-cream: #f7ead6;
 }
 
 body {

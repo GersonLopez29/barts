@@ -59,7 +59,7 @@ export default function MenuItemCard({
         <h3 className="text-sm font-bold text-zinc-900">{name}</h3>
         <p className="mt-1 line-clamp-2 text-xs text-zinc-500">{description}</p>
         <div className="mt-3 flex items-center justify-between gap-2">
-          <span className="text-lg font-bold text-red-600">{formatPrice(price)}</span>
+          <span className="text-lg font-bold text-brand-orange">{formatPrice(price)}</span>
           <button
             type="button"
             onClick={handleAdd}
@@ -67,7 +67,7 @@ export default function MenuItemCard({
             className={`rounded-full px-4 py-2 text-sm font-bold text-white shadow-sm transition disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:shadow-none ${
               justAdded
                 ? "bg-green-600"
-                : "bg-red-600 hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-md"
+                : "bg-brand-orange hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-md"
             }`}
           >
             {justAdded ? "✓ Agregado" : "Agregar"}
