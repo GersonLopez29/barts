@@ -29,6 +29,7 @@ export type AdminMinAggregateOutputType = {
   email: string | null
   passwordHash: string | null
   name: string | null
+  mustChangePassword: boolean | null
   createdAt: Date | null
 }
 
@@ -37,6 +38,7 @@ export type AdminMaxAggregateOutputType = {
   email: string | null
   passwordHash: string | null
   name: string | null
+  mustChangePassword: boolean | null
   createdAt: Date | null
 }
 
@@ -45,6 +47,7 @@ export type AdminCountAggregateOutputType = {
   email: number
   passwordHash: number
   name: number
+  mustChangePassword: number
   createdAt: number
   _all: number
 }
@@ -55,6 +58,7 @@ export type AdminMinAggregateInputType = {
   email?: true
   passwordHash?: true
   name?: true
+  mustChangePassword?: true
   createdAt?: true
 }
 
@@ -63,6 +67,7 @@ export type AdminMaxAggregateInputType = {
   email?: true
   passwordHash?: true
   name?: true
+  mustChangePassword?: true
   createdAt?: true
 }
 
@@ -71,6 +76,7 @@ export type AdminCountAggregateInputType = {
   email?: true
   passwordHash?: true
   name?: true
+  mustChangePassword?: true
   createdAt?: true
   _all?: true
 }
@@ -152,6 +158,7 @@ export type AdminGroupByOutputType = {
   email: string
   passwordHash: string
   name: string
+  mustChangePassword: boolean
   createdAt: Date
   _count: AdminCountAggregateOutputType | null
   _min: AdminMinAggregateOutputType | null
@@ -181,6 +188,7 @@ export type AdminWhereInput = {
   email?: Prisma.StringFilter<"Admin"> | string
   passwordHash?: Prisma.StringFilter<"Admin"> | string
   name?: Prisma.StringFilter<"Admin"> | string
+  mustChangePassword?: Prisma.BoolFilter<"Admin"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Admin"> | Date | string
 }
 
@@ -189,6 +197,7 @@ export type AdminOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  mustChangePassword?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -200,6 +209,7 @@ export type AdminWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.AdminWhereInput | Prisma.AdminWhereInput[]
   passwordHash?: Prisma.StringFilter<"Admin"> | string
   name?: Prisma.StringFilter<"Admin"> | string
+  mustChangePassword?: Prisma.BoolFilter<"Admin"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Admin"> | Date | string
 }, "id" | "email">
 
@@ -208,6 +218,7 @@ export type AdminOrderByWithAggregationInput = {
   email?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  mustChangePassword?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.AdminCountOrderByAggregateInput
   _max?: Prisma.AdminMaxOrderByAggregateInput
@@ -222,6 +233,7 @@ export type AdminScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"Admin"> | string
   passwordHash?: Prisma.StringWithAggregatesFilter<"Admin"> | string
   name?: Prisma.StringWithAggregatesFilter<"Admin"> | string
+  mustChangePassword?: Prisma.BoolWithAggregatesFilter<"Admin"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Admin"> | Date | string
 }
 
@@ -230,6 +242,7 @@ export type AdminCreateInput = {
   email: string
   passwordHash: string
   name: string
+  mustChangePassword?: boolean
   createdAt?: Date | string
 }
 
@@ -238,6 +251,7 @@ export type AdminUncheckedCreateInput = {
   email: string
   passwordHash: string
   name: string
+  mustChangePassword?: boolean
   createdAt?: Date | string
 }
 
@@ -246,6 +260,7 @@ export type AdminUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -254,6 +269,7 @@ export type AdminUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -262,6 +278,7 @@ export type AdminCreateManyInput = {
   email: string
   passwordHash: string
   name: string
+  mustChangePassword?: boolean
   createdAt?: Date | string
 }
 
@@ -270,6 +287,7 @@ export type AdminUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -278,6 +296,7 @@ export type AdminUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -286,6 +305,7 @@ export type AdminCountOrderByAggregateInput = {
   email?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  mustChangePassword?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -294,6 +314,7 @@ export type AdminMaxOrderByAggregateInput = {
   email?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  mustChangePassword?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -302,11 +323,16 @@ export type AdminMinOrderByAggregateInput = {
   email?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  mustChangePassword?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -320,6 +346,7 @@ export type AdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   email?: boolean
   passwordHash?: boolean
   name?: boolean
+  mustChangePassword?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["admin"]>
 
@@ -328,6 +355,7 @@ export type AdminSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   email?: boolean
   passwordHash?: boolean
   name?: boolean
+  mustChangePassword?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["admin"]>
 
@@ -336,6 +364,7 @@ export type AdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   email?: boolean
   passwordHash?: boolean
   name?: boolean
+  mustChangePassword?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["admin"]>
 
@@ -344,10 +373,11 @@ export type AdminSelectScalar = {
   email?: boolean
   passwordHash?: boolean
   name?: boolean
+  mustChangePassword?: boolean
   createdAt?: boolean
 }
 
-export type AdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "passwordHash" | "name" | "createdAt", ExtArgs["result"]["admin"]>
+export type AdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "passwordHash" | "name" | "mustChangePassword" | "createdAt", ExtArgs["result"]["admin"]>
 
 export type $AdminPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Admin"
@@ -357,6 +387,7 @@ export type $AdminPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     email: string
     passwordHash: string
     name: string
+    mustChangePassword: boolean
     createdAt: Date
   }, ExtArgs["result"]["admin"]>
   composites: {}
@@ -785,6 +816,7 @@ export interface AdminFieldRefs {
   readonly email: Prisma.FieldRef<"Admin", 'String'>
   readonly passwordHash: Prisma.FieldRef<"Admin", 'String'>
   readonly name: Prisma.FieldRef<"Admin", 'String'>
+  readonly mustChangePassword: Prisma.FieldRef<"Admin", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Admin", 'DateTime'>
 }
     

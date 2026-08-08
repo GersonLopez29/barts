@@ -41,7 +41,7 @@ export async function getCurrentAdmin() {
 
     const admin = await prisma.admin.findUnique({
       where: { id: adminId },
-      select: { id: true, name: true, email: true },
+      select: { id: true, name: true, email: true, mustChangePassword: true },
     });
 
     return admin;

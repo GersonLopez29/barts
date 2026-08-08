@@ -80,6 +80,7 @@ export const AdminScalarFieldEnum = {
   email: 'email',
   passwordHash: 'passwordHash',
   name: 'name',
+  mustChangePassword: 'mustChangePassword',
   createdAt: 'createdAt'
 } as const
 

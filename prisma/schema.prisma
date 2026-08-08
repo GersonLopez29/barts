@@ -11,11 +11,12 @@ datasource db {
 }
 
 model Admin {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  passwordHash String
-  name         String
-  createdAt    DateTime @default(now())
+  id                String   @id @default(cuid())
+  email             String   @unique
+  passwordHash      String
+  name              String
+  mustChangePassword Boolean @default(false)
+  createdAt         DateTime @default(now())
 }
 
 // Intentos de login fallidos, usados para el rate-limiting de /api/auth/login.

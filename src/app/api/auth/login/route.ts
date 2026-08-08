@@ -52,5 +52,10 @@ export async function POST(request: Request) {
   await Promise.all([clearAttempts(ipKey), clearAttempts(emailKey)]);
   await createSession(admin.id);
 
-  return NextResponse.json({ id: admin.id, name: admin.name, email: admin.email });
+  return NextResponse.json({
+    id: admin.id,
+    name: admin.name,
+    email: admin.email,
+    mustChangePassword: admin.mustChangePassword,
+  });
 }

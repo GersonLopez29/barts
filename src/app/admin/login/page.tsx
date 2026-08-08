@@ -23,13 +23,14 @@ export default function AdminLoginPage() {
 
     setLoading(false);
 
+    const data = await res.json().catch(() => ({}));
+
     if (!res.ok) {
-      const data = await res.json().catch(() => ({}));
       setError(data.error ?? "No se pudo iniciar sesión");
       return;
     }
 
-    router.push("/admin/pedidos");
+    router.push(data.mustChangePassword ? "/admin/cambiar-password" : "/admin/pedidos");
     router.refresh();
   }
 

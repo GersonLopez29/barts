@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentAdmin } from "@/lib/session";
 import { prisma } from "@/lib/db";
@@ -15,6 +16,9 @@ export default async function AdminProtectedLayout({
   if (!admin) {
     redirect("/admin/login");
   }
+  if (admin.mustChangePassword) {
+    redirect("/admin/cambiar-password");
+  }
 
   const pendingOrders = await prisma.order.count({ where: { status: "pendiente" } });
 
@@ -24,6 +28,9 @@ export default async function AdminProtectedLayout({
         <h1 className="text-2xl font-bold text-zinc-900">Panel Bart&apos;s</h1>
         <div className="flex items-center gap-3 text-sm text-zinc-500">
           <span>Hola, {admin.name}</span>
+          <Link href="/admin/cambiar-password" className="hover:text-zinc-700 hover:underline">
+            Cambiar contraseña
+          </Link>
           <LogoutButton />
         </div>
       </div>
